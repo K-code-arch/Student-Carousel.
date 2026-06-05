@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student ID Carousel</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #081028, #1b2b52);
+      }
+
+      .carousel-container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .card-container {
+        width: 320px;
+      }
+
+      .student-card {
+        display: none;
+        width: 320px;
+        background: white;
+        border-radius: 25px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .student-card.active {
+        display: block;
+      }
+
+      .top-section {
+        height: 140px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+      }
+
+      .student-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid white;
+        object-fit: cover;
+        margin-top: -50px;
+      }
+
+      .student-card h2 {
+        margin-top: 20px;
+        color: #001845;
+      }
+
+      .student-card p {
+        margin: 8px 0;
+        color: #4a6785;
+      }
+
+      .student-card {
+        padding-bottom: 25px;
+      }
+
+      .arrow {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        font-size: 30px;
+        cursor: pointer;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
+
+      .arrow:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-container">
+      <button class="arrow" onclick="previousCard()">&#10094;</button>
+
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="student-card active">
+          <div class="top-section"></div>
+
+          <img src="./students 1.jpg" alt="Student" />
+
+          <h2>John Doe</h2>
+          <p>ID: STU-001</p>
+          <p>Software Engineering</p>
+          <p>Level 300</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="student-card">
+          <div class="top-section"></div>
+
+          <img src="./Students 2.jpg" alt="Student" />
+
+          <h2>Mary Johnson</h2>
+          <p>ID: STU-002</p>
+          <p>Computer Science</p>
+          <p>Level 200</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="student-card">
+          <div class="top-section"></div>
+
+          <img src="./Students 3.jpg" alt="Student" />
+
+          <h2>David Smith</h2>
+          <p>ID: STU-003</p>
+          <p>Information Technology</p>
+          <p>Level 400</p>
+        </div>
+      </div>
+
+      <button class="arrow" onclick="nextCard()">&#10095;</button>
+      <button class="arrow" onclick="nextCard()">&#10095;</button>
+      <button class="arrow" onclick="nextCard()">&#10095;</button>
+      <button class="arrow" onclick="nextCard()">&#10095;</button>
+      <button class="arrow" onclick="nextCard()">&#10095;</button>
+    </div>
+
+    <script src="./Student carousel.js"></script>
+  </body>
+</html>
