@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <style>
+    #output{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.table-card{
+    width: 220px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.table-card h3{
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.table-card p{
+    margin: 5px 0;
+}
+   </style>
+
+</head>
+<body>
+    <input type="number" id="number" placeholder="Enter a number">
+<button onclick="generateTables()">Generate</button>
+
+<div id="output"></div>
+</body>
+</html>
+
+<script>
+function generateTables() {
+    let num = Number(document.getElementById("number").value);
+
+      if (num < 1) {
+        alert("Please enter a positive number greater than 0.");
+        return;
+    }
+    let output = document.getElementById("output");
+
+    let allCards = "";
+
+    for(let i = 1; i <= num; i++) {
+
+        let card = `
+            <div class="table-card">
+                <h3>${i} Times Table</h3>
+        `;
+
+        for(let j = 1; j <= 12; j++) {
+            card += `<p>${i} × ${j} = ${i * j}</p>`;
+        }
+
+        card += `</div>`;
+
+        allCards += card;
+    }
+
+    output.innerHTML = allCards;
+}
+</script>
